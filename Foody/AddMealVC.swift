@@ -1,14 +1,15 @@
 //
-//  MainMenuVC.swift
+//  AddMealVC.swift
 //  Foody
 //
-//  Created by Sebastian Strus on 2017-10-30.
+//  Created by Sebastian Strus on 2017-10-31.
 //  Copyright © 2017 Sebastian Strus. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-class MainMenuVC: UIViewController {
+class AddMealVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

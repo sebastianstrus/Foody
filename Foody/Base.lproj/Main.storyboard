@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New dish-->
+        <!--Add meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="New dish" id="BYZ-38-t0r" customClass="MainMenuVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add meal" id="BYZ-38-t0r" customClass="AddMealVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,18 +20,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of the meal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDy-Jg-Gw5">
+                                <rect key="frame" x="72" y="87" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oDw-yn-j4R">
+                                <rect key="frame" x="0.0" y="259" width="375" height="130"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="531166619.94861603">
+                                    <!--2017-10-31 18:16:59 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R1n-Fe-bhT">
+                                <rect key="frame" x="48" y="405" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvR-kv-Bis">
+                                <rect key="frame" x="182" y="409" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hGK-Ss-BKw">
+                                <rect key="frame" x="16" y="459" width="291" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eF4-em-03H">
+                                <rect key="frame" x="37" y="138" width="298" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="New dish" image="icon_add" id="4nu-RA-1IF"/>
+                    <tabBarItem key="tabBarItem" title="Add meal" image="icon_add" id="4nu-RA-1IF"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1382" y="879"/>
+            <point key="canvasLocation" x="-1383.2" y="878.41079460269873"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tKR-Dg-Cjh">
             <objects>
-                <viewController id="Fcx-yI-vHE" sceneMemberID="viewController">
+                <viewController id="Fcx-yI-vHE" customClass="LoginVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wd3-aN-Kfo"/>
                         <viewControllerLayoutGuide type="bottom" id="KQl-Ac-F8n"/>
@@ -83,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtu-cW-02L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-604" y="139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8z8-nN-Uv3">
@@ -96,7 +138,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GBf-Vd-CZL"/>
-                        <segue destination="6nK-rb-ztg" kind="relationship" relationship="viewControllers" id="8hZ-w4-N1e"/>
+                        <segue destination="hlW-7O-urT" kind="relationship" relationship="viewControllers" id="bYI-yx-EfF"/>
                         <segue destination="yRU-Gu-MAM" kind="relationship" relationship="viewControllers" id="Ngb-WL-uCD"/>
                         <segue destination="bzm-bR-iXz" kind="relationship" relationship="viewControllers" id="ohX-aZ-wjG"/>
                         <segue destination="quU-pe-6yd" kind="relationship" relationship="viewControllers" id="3aj-cF-JyH"/>
@@ -107,28 +149,39 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
         <!--List-->
-        <scene sceneID="Z8S-3C-IXr">
+        <scene sceneID="PBX-DB-9p1">
             <objects>
-                <viewController title="List" id="6nK-rb-ztg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YBf-Oc-1uy"/>
-                        <viewControllerLayoutGuide type="bottom" id="NaP-gR-aeC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Zd-7s-LdZ">
+                <tableViewController title="List" id="hlW-7O-urT" customClass="ListTVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="fUP-zd-miD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="List" image="icon_list" id="rKX-3G-6V4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pMe-QC-89P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="X46-qU-hqa">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X46-qU-hqa" id="4pP-n6-TsT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hlW-7O-urT" id="9r7-1h-ske"/>
+                            <outlet property="delegate" destination="hlW-7O-urT" id="h1W-nl-z5F"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_list" id="pd1-WK-EL3"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1wf-QN-dkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-604" y="879"/>
         </scene>
         <!--Map-->
         <scene sceneID="WqZ-UV-h7E">
             <objects>
-                <viewController title="Map" id="yRU-Gu-MAM" sceneMemberID="viewController">
+                <viewController title="Map" id="yRU-Gu-MAM" customClass="MapVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qg7-I8-vl3"/>
                         <viewControllerLayoutGuide type="bottom" id="8u0-k6-PmS"/>
@@ -139,15 +192,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="icon_map" id="2lN-J7-bYZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7e8-eE-qpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="880"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="hb0-0q-u5B">
             <objects>
-                <viewController id="bzm-bR-iXz" sceneMemberID="viewController">
+                <viewController title="Favorites" id="bzm-bR-iXz" customClass="FavoritesVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzK-Uz-4rx"/>
                         <viewControllerLayoutGuide type="bottom" id="Clp-xV-SBc"/>
@@ -158,6 +212,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="ldP-b0-OgI"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SW6-fs-04w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -166,7 +221,7 @@
         <!--Settings-->
         <scene sceneID="v9q-Ju-Jl9">
             <objects>
-                <viewController title="Settings" id="quU-pe-6yd" sceneMemberID="viewController">
+                <viewController title="Settings" id="quU-pe-6yd" customClass="SettingsVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LuB-t3-ZZL"/>
                         <viewControllerLayoutGuide type="bottom" id="WFm-Ia-5G5"/>
@@ -187,6 +242,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="icon_settings" id="AcV-dS-8mY"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j37-dv-a5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,5 +255,4 @@
         <image name="icon_map" width="32" height="32"/>
         <image name="icon_settings" width="32" height="32"/>
     </resources>
-    <color key="tintColor" red="0.074506941313886577" green="0.42177391594006997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
