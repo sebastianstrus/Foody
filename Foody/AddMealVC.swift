@@ -8,13 +8,17 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class AddMealVC: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +26,11 @@ class AddMealVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        scrollView.contentSize = CGSize(width: 375
+            , height: 1000)
+    }
 
     /*
     // MARK: - Navigation

@@ -20,6 +20,10 @@
 		7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED51FA8CD0300906976 /* SettingsVC.swift */; };
 		7DFADEDA1FA8CD5900906976 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED91FA8CD5900906976 /* FavoritesVC.swift */; };
 		7DFADEDC1FA8D50800906976 /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEDB1FA8D50800906976 /* ListTVC.swift */; };
+		7DFADEDF1FA92DFB00906976 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */; };
+		7DFADEE01FA92DFB00906976 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */; };
+		7DFADEE21FA9331900906976 /* Yellowtail-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEE11FA9331900906976 /* Yellowtail-Regular.otf */; };
+		7DFADEE51FA9345500906976 /* Dynalight-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEE41FA9345500906976 /* Dynalight-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		7DFADED51FA8CD0300906976 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		7DFADED91FA8CD5900906976 /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		7DFADEDB1FA8D50800906976 /* ListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
+		7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
+		7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
+		7DFADEE11FA9331900906976 /* Yellowtail-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.otf"; sourceTree = "<group>"; };
+		7DFADEE41FA9345500906976 /* Dynalight-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dynalight-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,8 @@
 				7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */,
 				7DFADEA91FA7B89800906976 /* Foody */,
 				7DFADEA81FA7B89800906976 /* Products */,
+				7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */,
+				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +84,7 @@
 			children = (
 				7DFADEAA1FA7B89800906976 /* AppDelegate.swift */,
 				7DFADEAE1FA7B89800906976 /* Main.storyboard */,
+				7DFADEE31FA9332A00906976 /* Fonts */,
 				7DFADEB41FA7B89800906976 /* Assets.xcassets */,
 				7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */,
 				7DFADEB91FA7B89800906976 /* Info.plist */,
@@ -86,6 +97,15 @@
 				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
 			);
 			path = Foody;
+			sourceTree = "<group>";
+		};
+		7DFADEE31FA9332A00906976 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7DFADEE41FA9345500906976 /* Dynalight-Regular.otf */,
+				7DFADEE11FA9331900906976 /* Yellowtail-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,8 +168,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFADEE51FA9345500906976 /* Dynalight-Regular.otf in Resources */,
 				7DFADEB81FA7B89800906976 /* LaunchScreen.storyboard in Resources */,
 				7DFADEB51FA7B89800906976 /* Assets.xcassets in Resources */,
+				7DFADEE21FA9331900906976 /* Yellowtail-Regular.otf in Resources */,
 				7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFADEDF1FA92DFB00906976 /* HoshiTextField.swift in Sources */,
 				7DFADEDA1FA8CD5900906976 /* FavoritesVC.swift in Sources */,
+				7DFADEE01FA92DFB00906976 /* TextFieldEffects.swift in Sources */,
 				7DFADEDC1FA8D50800906976 /* ListTVC.swift in Sources */,
 				7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */,
 				7DFADECA1FA8CBDF00906976 /* LoginVC.swift in Sources */,
