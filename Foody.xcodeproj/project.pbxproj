@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
 		7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEAA1FA7B89800906976 /* AppDelegate.swift */; };
 		7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEAE1FA7B89800906976 /* Main.storyboard */; };
 		7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
 		7DFADEA71FA7B89800906976 /* Foody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFADEAA1FA7B89800906976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFADEAF1FA7B89800906976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				7DFADED91FA8CD5900906976 /* FavoritesVC.swift */,
 				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
 				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
+				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
 			);
 			path = Foody;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */,
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
 				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
+				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +362,7 @@
 				7DFADEBE1FA7B89800906976 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

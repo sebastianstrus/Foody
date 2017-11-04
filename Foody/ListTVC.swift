@@ -11,86 +11,161 @@ import CoreData
 
 class ListTVC: UITableViewController {
 
+    
+    var allMeals: [Meal]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        /*let backgroundImage = UIImage(named: "sky")
+        self.tableView.backgroundView = UIImageView(image: backgroundImage)
+        tableView.backgroundColor = UIColor.clear
+        */
+        // retrive from CoreData
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
+        do {
+            let meals = try context.fetch(request) as! [Meal]
+            allMeals = meals
+        }
+        catch let error {
+            print("\(error)")
+        }
+        
+        /*let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        let delete = UIBarButtonItem(title: "Delete All", style: .plain, target: self, action: #selector(deleteAll))
+        delete.tintColor = UIColor.red
+        
+        navigationItem.rightBarButtonItems = [add, delete]*/
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    /*func addTapped() {
+        performSegue(withIdentifier: "newTripSegue", sender: nil)
+    }*/
+    
+    func deleteAll() {
+        let isEmpty = allMeals?.isEmpty
+        let message = isEmpty! ? "There is no trips." : "Are you sure you want to delete all the trips??"
+        let alertController = UIAlertController(title: "DELETE ALL ITEMS", message: message, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (result: UIAlertAction) -> Void in
+            print("ok")
+        }
+        let deleteAllAction = UIAlertAction(title: "Delete all", style: .destructive) { (result: UIAlertAction) -> Void in
+            self.deleteAllData(entity: "Meal")
+            self.allMeals?.removeAll()
+            self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (result: UIAlertAction) -> Void in
+            print("cancel")
+        }
+        if !isEmpty! {
+            alertController.addAction(deleteAllAction)
+            alertController.addAction(cancelAction)
+        }
+        else {
+            alertController.addAction(okAction)
+        }
+        self.present(alertController, animated: true, completion: nil)
     }
-
+    
+    func deleteAllData(entity: String) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.delete(managedObjectData)
+                try managedContext.save()
+            }
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
+        }
+    }
+    
+    
+    
+    
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allMeals!.count
     }
-
-    /*
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.imageView?.image = UIImage(data: allMeals?[indexPath.row].image as! Data)
+        cell.imageView?.frame.size.width = 80
+        
+        cell.textLabel?.text = allMeals?[indexPath.row].name
+        cell.textLabel?.font = UIFont(name: "Baskerville-BoldItalic", size:25)
+        
+        cell.backgroundColor = UIColor.clear
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            //TODO: delete from CoreData
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Trip")
+            do {
+                let results = try context.fetch(request)
+                if !results.isEmpty {
+                    for result in results as! [Meal] {
+                        if let name = result.value(forKey: "name") as? String {
+                            //TODO: set old and new image that vill change image in CoreData
+                            if name == allMeals?[indexPath.row].name {//or == unik number
+                                context.delete(result as NSManagedObject)
+                                print("deleted")
+                                do {
+                                    try context.save()
+                                    print("saved")
+                                }
+                                catch {
+                                    print("error")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                print("error when retrieving")
+            }
+            
+            
+            allMeals?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMeal" {
+            if let IndexPath = self.tableView.indexPathForSelectedRow {
+                let meal = allMeals?[IndexPath.row]
+                (segue.destination as! MealVC).meal = meal
+            }
+        }
     }
-    */
+
 
 }

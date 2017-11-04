@@ -2,7 +2,7 @@
 //  Meal+CoreDataProperties.swift
 //  Foody
 //
-//  Created by Sebastian Strus on 2017-10-31.
+//  Created by Sebastian Strus on 2017-11-03.
 //  Copyright © 2017 Sebastian Strus. All rights reserved.
 //
 
@@ -16,12 +16,13 @@ extension Meal {
         return NSFetchRequest<Meal>(entityName: "Meal")
     }
 
-    @NSManaged public var name: String?
-    @NSManaged public var mealDescription: String?
+    @NSManaged public var date: NSDate?
+    @NSManaged public var image: NSData?
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-    @NSManaged public var date: NSDate?
+    @NSManaged public var mealDescription: String?
+    @NSManaged public var name: String?
     @NSManaged public var price: Int32
-    @NSManaged public var image: NSData?
+    @NSManaged public var favorite: Bool
 
 }
