@@ -9,28 +9,67 @@
 import UIKit
 import CoreData
 
-class FavoritesVC: UIViewController {
+class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var allMeals: [Meal]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getMeals()
         // Do any additional setup after loading the view.
+        
+        let itemSize = UIScreen.main.bounds.width/3 - 3
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
+        layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.minimumInteritemSpacing = 3
+        layout.minimumLineSpacing = 3
+        collectionView.collectionViewLayout = layout
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // number of views
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (allMeals?.count)!
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FavoriteCell
+        
+        //let screenSize: CGRect = UIScreen.main.bounds
+        //cell.frame.width = screenSize.width - 10
+            // CGRect(x: 0, y: 0, width: 50, height: screenSize.height * 0.2)
+        
+        cell.favoriteImageView.image = UIImage(data:(allMeals?[indexPath.row].image)! as Data,scale:1.0)
+        
+        
+        return cell// Cannot convert value of type 'NSData?' to type 'UIImage' in coercion
     }
-    */
+    
+    
+    
+    
+    
+    
+    
+    func getMeals() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
+        do {
+            let meals = try context.fetch(request) as! [Meal]
+            allMeals = meals
+        }
+        catch let error {
+            print("\(error)")
+        }
+        print("All meals (\(allMeals?.count)):")
+        for meal in allMeals! {
+            print("Meal: \(meal.description)")
+        }
+    }
 
 }

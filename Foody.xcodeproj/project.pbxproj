@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
+		7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */; };
+		7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */; };
+		7D9C5B4B1FAF8D2F00A9EFC6 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */; };
 		7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEAA1FA7B89800906976 /* AppDelegate.swift */; };
 		7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEAE1FA7B89800906976 /* Main.storyboard */; };
 		7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */; };
-		7DFADEB51FA7B89800906976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEB41FA7B89800906976 /* Assets.xcassets */; };
 		7DFADEB81FA7B89800906976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */; };
 		7DFADEC71FA8C23600906976 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */; };
 		7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */; };
@@ -29,11 +31,13 @@
 
 /* Begin PBXFileReference section */
 		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
+		7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		7DFADEA71FA7B89800906976 /* Foody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFADEAA1FA7B89800906976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFADEAF1FA7B89800906976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DFADEB21FA7B89800906976 /* Foody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foody.xcdatamodel; sourceTree = "<group>"; };
-		7DFADEB41FA7B89800906976 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DFADEB71FA7B89800906976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DFADEB91FA7B89800906976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -86,18 +90,20 @@
 			children = (
 				7DFADEAA1FA7B89800906976 /* AppDelegate.swift */,
 				7DFADEAE1FA7B89800906976 /* Main.storyboard */,
+				7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */,
 				7DFADEE31FA9332A00906976 /* Fonts */,
-				7DFADEB41FA7B89800906976 /* Assets.xcassets */,
 				7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */,
 				7DFADEB91FA7B89800906976 /* Info.plist */,
 				7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */,
 				7DFADEC91FA8CBDF00906976 /* LoginVC.swift */,
 				7DFADED11FA8CCD400906976 /* AddMealVC.swift */,
+				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
+				7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */,
 				7DFADED31FA8CCEA00906976 /* MapVC.swift */,
 				7DFADED91FA8CD5900906976 /* FavoritesVC.swift */,
 				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
-				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
 				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
+				7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */,
 			);
 			path = Foody;
 			sourceTree = "<group>";
@@ -173,9 +179,9 @@
 			files = (
 				7DFADEE51FA9345500906976 /* Dynalight-Regular.otf in Resources */,
 				7DFADEB81FA7B89800906976 /* LaunchScreen.storyboard in Resources */,
-				7DFADEB51FA7B89800906976 /* Assets.xcassets in Resources */,
 				7DFADEE21FA9331900906976 /* Yellowtail-Regular.otf in Resources */,
 				7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */,
+				7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9C5B4B1FAF8D2F00A9EFC6 /* MealCell.swift in Sources */,
 				7DFADEDF1FA92DFB00906976 /* HoshiTextField.swift in Sources */,
 				7DFADEDA1FA8CD5900906976 /* FavoritesVC.swift in Sources */,
 				7DFADEE01FA92DFB00906976 /* TextFieldEffects.swift in Sources */,
@@ -197,6 +204,7 @@
 				7DFADED41FA8CCEA00906976 /* MapVC.swift in Sources */,
 				7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */,
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
+				7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */,
 				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
 				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
 			);

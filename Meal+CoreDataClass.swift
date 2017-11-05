@@ -12,5 +12,7 @@ import CoreData
 
 public class Meal: NSManagedObject {
 
-    
+    override public var description : String {
+        return "This is meal description."
+    }
 }
