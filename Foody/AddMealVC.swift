@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 
-class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
+class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -41,8 +41,11 @@ class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var currentLongitude = 0.0
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -52,13 +55,16 @@ class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         selectedDateLabel.text = formatter.string(from: date)
+        
+        //initial rating
         currentRating = 0
         
-        
-        configureLocationMenager()
+        // set map
         mapView.showsUserLocation = true
+        mapView.delegate = self
         
         
+
         blackView.alpha = 0.0
         //datePicker.setValue(UIColor.blue, forKey: "textColor")
         datePopup.alpha = 0
@@ -68,6 +74,10 @@ class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         ratingPicker.delegate = self
         ratingPicker.dataSource = self
         ratings = [Int32](0...10)
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        mapView.showAnnotations([userLocation], animated: true)
     }
     
     @IBAction func showDatePicker(_ sender: UIButton) {
@@ -246,14 +256,6 @@ class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         scrollView.contentSize = CGSize(width: 375
             , height: 900)
     }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            let span = MKCoordinateSpan(latitudeDelta: 100, longitudeDelta: 100)
-            let lookHereRegion = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(lookHereRegion, animated: true)
-        }
-    }
     
     // PickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -270,16 +272,4 @@ class AddMealVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         currentRating = ratings?[row]
         print(currentRating!)
     }
-    
-    
-    func configureLocationMenager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.distanceFilter = 1000
-        locationManager.desiredAccuracy = 1000
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
-
 }

@@ -25,9 +25,9 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         
         getMeals()
         configureLocationMenager()
-        
         mapView.delegate = self
         addAllMealsToMap()
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

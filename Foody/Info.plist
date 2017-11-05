@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Where are you?</string>
+	<string>Focus on user.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To take a photo.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

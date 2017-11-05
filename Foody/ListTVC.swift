@@ -19,7 +19,7 @@ class ListTVC: UITableViewController {
         
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        
+
         /*let backgroundImage = UIImage(named: "sky")
         self.tableView.backgroundView = UIImageView(image: backgroundImage)
         tableView.backgroundColor = UIColor.clear
@@ -35,17 +35,10 @@ class ListTVC: UITableViewController {
         iconButton.tintColor = UIColor.red
         let barButton = UIBarButtonItem(customView: iconButton)
         iconButton.addTarget(self, action: #selector(deleteAll), for: .touchUpInside)
-        
-        
-        
-        
         let delete = UIBarButtonItem(title: "Delete All", style: .plain, target: self, action: #selector(deleteAll))
-        
         delete.tintColor = UIColor.red
-        
         navigationItem.rightBarButtonItems = [barButton]
     }
-    
     
     func deleteAll() {
         let isEmpty = allMeals?.isEmpty
@@ -101,33 +94,24 @@ class ListTVC: UITableViewController {
         return allMeals!.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mealCell", for: indexPath) as! MealCell
-        
-
         cell.imageView?.image = UIImage(data: allMeals?[indexPath.row].image! as! Data)
         cell.imageView?.frame.size.width = 80
-        
-        
         cell.firstLabel?.text = allMeals?[indexPath.row].name
         cell.firstLabel?.font = UIFont(name: "Baskerville-BoldItalic", size:25)
         let k = Int((allMeals?[indexPath.row].rating)!)
         print("\(k)")
         var stars = ""
         if k > 0 {
-            for i in 1...(k) {
-                stars += "✶" //"☆"
+            for i in 1...k {
+                stars += "☆"// "✶"
             }
         }
         print(stars)
         cell.secondLabel?.text = stars
-        
         cell.secondLabel?.font = UIFont(name: "Baskerville-BoldItalic", size:25)
-        
-        
         cell.backgroundColor = UIColor.clear
-        
         return cell
     }
     
