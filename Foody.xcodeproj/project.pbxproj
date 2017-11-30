@@ -11,6 +11,7 @@
 		7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */; };
 		7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */; };
 		7D9C5B4B1FAF8D2F00A9EFC6 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */; };
+		7DA448A11FD0BC7C00196929 /* WebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA448A01FD0BC7C00196929 /* WebVC.swift */; };
 		7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEAA1FA7B89800906976 /* AppDelegate.swift */; };
 		7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEAE1FA7B89800906976 /* Main.storyboard */; };
 		7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 		7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		7DA448A01FD0BC7C00196929 /* WebVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebVC.swift; sourceTree = "<group>"; };
 		7DFADEA71FA7B89800906976 /* Foody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFADEAA1FA7B89800906976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DFADEAF1FA7B89800906976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
 				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
 				7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */,
+				7DA448A01FD0BC7C00196929 /* WebVC.swift */,
 			);
 			path = Foody;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */,
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
 				7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */,
+				7DA448A11FD0BC7C00196929 /* WebVC.swift in Sources */,
 				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
 				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
 			);
