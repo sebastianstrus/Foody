@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17B1003" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VUz-Uq-HzH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17B1003" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcx-yI-vHE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -217,34 +217,6 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1346.4000000000001" y="873.91304347826099"/>
-        </scene>
-        <!--WebVC-->
-        <scene sceneID="iYg-hq-ppV">
-            <objects>
-                <viewController id="VUz-Uq-HzH" customClass="WebVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8yU-xG-ofk"/>
-                        <viewControllerLayoutGuide type="bottom" id="YLo-Lr-taK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ivO-5U-ug2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzM-Ik-fag">
-                                <rect key="frame" x="16" y="126" width="343" height="225"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="bzM-Ik-fag" id="DyQ-gc-LqG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pPH-ng-WRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2322.4000000000001" y="68.815592203898049"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="tKR-Dg-Cjh">
@@ -622,7 +594,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dde-xM-4ig" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="icon_list" id="pd1-WK-EL3"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jab-rl-1Cw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jab-rl-1Cw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -641,7 +613,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="28p-JM-rhb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="ldP-b0-OgI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDI-dq-3UY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kDI-dq-3UY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
