@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcx-yI-vHE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Fcx-yI-vHE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -344,7 +344,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GBf-Vd-CZL"/>
                         <segue destination="dde-xM-4ig" kind="relationship" relationship="viewControllers" id="bYI-yx-EfF"/>
                         <segue destination="yRU-Gu-MAM" kind="relationship" relationship="viewControllers" id="Ngb-WL-uCD"/>
-                        <segue destination="bzm-bR-iXz" kind="relationship" relationship="viewControllers" id="ohX-aZ-wjG"/>
+                        <segue destination="28p-JM-rhb" kind="relationship" relationship="viewControllers" id="ohX-aZ-wjG"/>
                         <segue destination="quU-pe-6yd" kind="relationship" relationship="viewControllers" id="3aj-cF-JyH"/>
                     </connections>
                 </tabBarController>
@@ -365,7 +365,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X46-qU-hqa" id="4pP-n6-TsT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAa-wJ-29H">
@@ -516,15 +516,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="ldP-b0-OgI"/>
+                    <navigationItem key="navigationItem" id="MPG-3H-OvQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="W9N-DF-RFE" id="Y90-f0-Yuz"/>
+                        <segue destination="aav-Ts-Q7T" kind="show" identifier="showFavoriteMeal" id="Eqc-xD-1Co"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SW6-fs-04w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="873.91304347826099"/>
+            <point key="canvasLocation" x="881" y="1645"/>
         </scene>
         <!--Settings-->
         <scene sceneID="v9q-Ju-Jl9">
@@ -554,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j37-dv-a5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="874"/>
+            <point key="canvasLocation" x="2564" y="873.91304347826099"/>
         </scene>
         <!--List-->
         <scene sceneID="AjE-Td-0Mk">
@@ -575,6 +576,25 @@
             </objects>
             <point key="canvasLocation" x="-604" y="878.41079460269873"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IN2-ca-PHS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="28p-JM-rhb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="ldP-b0-OgI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kDI-dq-3UY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bzm-bR-iXz" kind="relationship" relationship="rootViewController" id="dRt-vn-TKg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7c-fS-Lfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="880.79999999999995" y="873.91304347826099"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_add" width="32" height="32"/>
@@ -583,4 +603,7 @@
         <image name="icon_settings" width="32" height="32"/>
         <image name="restaurant" width="636" height="636"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Eqc-xD-1Co"/>
+    </inferredMetricsTieBreakers>
 </document>

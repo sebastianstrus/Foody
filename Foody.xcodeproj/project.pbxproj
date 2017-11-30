@@ -71,9 +71,9 @@
 				7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */,
 				7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */,
 				7DFADEA91FA7B89800906976 /* Foody */,
-				7DFADEA81FA7B89800906976 /* Products */,
 				7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */,
 				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
+				7DFADEA81FA7B89800906976 /* Products */,
 			);
 			sourceTree = "<group>";
 		};

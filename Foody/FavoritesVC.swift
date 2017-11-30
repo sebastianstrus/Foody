@@ -71,5 +71,27 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             print("Meal: \(meal.description)")
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getMeals()
+        collectionView.reloadData()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //Pass indexPath as sender
+        self.performSegue(withIdentifier: "showFavoriteMeal", sender: indexPath)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if( segue.identifier == "showFavoriteMeal" ) {
+            
+            let VC1 = segue.destination as! MealVC
+            if let indexPath = sender as? IndexPath {
+                
+                let meal = allMeals?[indexPath.row]
+                VC1.meal = meal
+            }
+        }
+    }
 
 }
