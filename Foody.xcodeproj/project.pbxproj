@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D284FF01FD0CC7A00EA843F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D284FEF1FD0CC7A00EA843F /* ViewController.swift */; };
+		7D284FF21FD0CDAC00EA843F /* test2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7D284FF11FD0CDAC00EA843F /* test2.mov */; };
 		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
 		7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */; };
 		7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D284FEF1FD0CC7A00EA843F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D284FF11FD0CDAC00EA843F /* test2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test2.mov; sourceTree = "<group>"; };
 		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
 		7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */,
 				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
 				7DFADEA81FA7B89800906976 /* Products */,
+				7D284FF11FD0CDAC00EA843F /* test2.mov */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
 				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
 				7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */,
+				7D284FEF1FD0CC7A00EA843F /* ViewController.swift */,
 			);
 			path = Foody;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 				7DFADEE21FA9331900906976 /* Yellowtail-Regular.otf in Resources */,
 				7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */,
 				7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */,
+				7D284FF21FD0CDAC00EA843F /* test2.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +213,7 @@
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
 				7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */,
 				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
+				7D284FF01FD0CC7A00EA843F /* ViewController.swift in Sources */,
 				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
