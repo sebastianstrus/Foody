@@ -134,6 +134,9 @@
                                                             <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="registerPressed:" destination="Uy2-zD-Lra" eventType="touchUpInside" id="eqp-Gn-sTT"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +165,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="emailTF" destination="b1Y-jK-fUE" id="nuH-x9-q3c"/>
+                        <outlet property="passwordRepeatTF" destination="WnH-Js-nXH" id="pCv-Yx-aW8"/>
+                        <outlet property="passwordTF" destination="iz6-Px-Mtx" id="qgJ-hT-9Jc"/>
+                        <outlet property="usernameTF" destination="Q5R-Ej-0vH" id="2Wt-hE-Sjh"/>
                         <segue destination="C9e-kt-Pxe" kind="show" identifier="registerToWelcome" id="0bD-rC-pQR"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="registerToHome" id="rKB-8A-Vqh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIB-H3-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -479,6 +487,9 @@
                                                             <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="loginPressed:" destination="gCb-Vn-0Gh" eventType="touchUpInside" id="b4B-SB-wZE"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
@@ -507,7 +518,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
+                        <outlet property="emailTF" destination="2qY-vB-Yq3" id="9zR-2T-DbT"/>
+                        <outlet property="passwordTF" destination="9Yf-KT-ZaF" id="IVp-wX-9bT"/>
                         <segue destination="C9e-kt-Pxe" kind="show" identifier="loginToWelcome" id="pzT-WW-sK8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginToHome" id="0zC-74-1hO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClD-ET-pHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -927,5 +941,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Eqc-xD-1Co"/>
         <segue reference="0bD-rC-pQR"/>
+        <segue reference="rKB-8A-Vqh"/>
     </inferredMetricsTieBreakers>
 </document>

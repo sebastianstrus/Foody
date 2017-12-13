@@ -3,6 +3,7 @@
 import UIKit
 import AVKit
 import AVFoundation
+import SwiftKeychainWrapper
 
 class WelcomePageVC: UIViewController {
     
@@ -17,7 +18,7 @@ class WelcomePageVC: UIViewController {
         let width:CGFloat = bounds.size.width
         let height:CGFloat = bounds.size.height
         
-        //add title
+        // add title
         let titleLabel = UILabel(frame: CGRect(x: width / 2 - 150, y: 180, width: 300, height: 50))
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.textColor = .white
@@ -25,6 +26,7 @@ class WelcomePageVC: UIViewController {
         titleLabel.text = "FOODY"
         self.view.addSubview(titleLabel)
         
+        // add subtitle
         let subtitleLabel = UILabel(frame: CGRect(x: width / 2 - 150, y: 240, width: 300, height: 20))
         subtitleLabel.textAlignment = NSTextAlignment.center
         subtitleLabel.textColor = .white
@@ -35,11 +37,11 @@ class WelcomePageVC: UIViewController {
         
         // create login button
         let loginButton = UIButton(frame: CGRect(x: width / 2 - 160, y: height - 160, width: 320, height: 60))
-        loginButton.backgroundColor = UIColor(red: 76/255, green: 142/255, blue: 251/255, alpha: 1.0)
+        loginButton.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
         loginButton.layer.cornerRadius = 30
         loginButton.layer.borderWidth = 2
-        loginButton.layer.borderColor = UIColor.white.cgColor //blue
-        loginButton.setTitle("LOGIN", for: .normal)
+        loginButton.layer.borderColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0).cgColor
+        loginButton.setTitle("LOG IN", for: .normal)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: 15)
         loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         self.view.addSubview(loginButton)
@@ -50,7 +52,7 @@ class WelcomePageVC: UIViewController {
         registerButton.layer.cornerRadius = 30
         registerButton.layer.borderWidth = 2
         registerButton.layer.borderColor = UIColor.white.cgColor
-        registerButton.setTitle("REGISTER", for: .normal)
+        registerButton.setTitle("SIGN UP", for: .normal)
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: 15)
         registerButton.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
         self.view.addSubview(registerButton)
@@ -84,7 +86,6 @@ class WelcomePageVC: UIViewController {
         //playerController.view.frame = screenSize
         self.view.addSubview(playerController.view)
         player.play()
-
         // repead video
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
             player.seek(to: kCMTimeZero)
@@ -95,7 +96,15 @@ class WelcomePageVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         // hide navigation bar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+        } else {
+            print("KeychainWrapper is empty.")
+            //performSegue(withIdentifier: "logout", sender: nil)
+        }
     }
+
     
     
     

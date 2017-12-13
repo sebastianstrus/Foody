@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FEFC83A6E3249F6B0D14D1B /* Pods_Foody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051D22CED95467592C14B3C /* Pods_Foody.framework */; };
 		7D284FF01FD0CC7A00EA843F /* WelcomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */; };
 		7D7E2BC91FD4CD8300C9F4A8 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */; };
 		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4051D22CED95467592C14B3C /* Pods_Foody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F89AC805101F68E1B0E97DC /* Pods-Foody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foody.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foody/Pods-Foody.release.xcconfig"; sourceTree = "<group>"; };
 		7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageVC.swift; sourceTree = "<group>"; };
 		7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
 		7DFADEE11FA9331900906976 /* Yellowtail-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.otf"; sourceTree = "<group>"; };
 		7DFADEE41FA9345500906976 /* Dynalight-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dynalight-Regular.otf"; sourceTree = "<group>"; };
+		DA6EBAACE10806A3DE0074FA /* Pods-Foody.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foody.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Foody/Pods-Foody.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FEFC83A6E3249F6B0D14D1B /* Pods_Foody.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
 				7DFADEA81FA7B89800906976 /* Products */,
 				7DA592C21FE195FB0058B2AB /* foody_background.mov */,
+				89EA7D79645E4368CF27E7EB /* Pods */,
+				D781F2EB2574E392F6DDB00D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,7 +110,6 @@
 				7DFADEE31FA9332A00906976 /* Fonts */,
 				7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */,
 				7DFADEB91FA7B89800906976 /* Info.plist */,
-				7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */,
 				7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */,
 				7DFADEC91FA8CBDF00906976 /* LoginVC.swift */,
 				7DF8795F1FE095A000BE2D97 /* RegisterVC.swift */,
@@ -116,6 +122,7 @@
 				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
 				7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */,
 				7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */,
+				7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */,
 			);
 			path = Foody;
 			sourceTree = "<group>";
@@ -129,6 +136,23 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		89EA7D79645E4368CF27E7EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA6EBAACE10806A3DE0074FA /* Pods-Foody.debug.xcconfig */,
+				6F89AC805101F68E1B0E97DC /* Pods-Foody.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D781F2EB2574E392F6DDB00D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4051D22CED95467592C14B3C /* Pods_Foody.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +160,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DFADEBC1FA7B89800906976 /* Build configuration list for PBXNativeTarget "Foody" */;
 			buildPhases = (
+				A18E5613F9B7EB33AE0CA684 /* [CP] Check Pods Manifest.lock */,
 				7DFADEA31FA7B89800906976 /* Sources */,
 				7DFADEA41FA7B89800906976 /* Frameworks */,
 				7DFADEA51FA7B89800906976 /* Resources */,
+				C4FF0400BE4E6914BF23E1C3 /* [CP] Embed Pods Frameworks */,
+				89BD46D02C2E55C8A05017A3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +226,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89BD46D02C2E55C8A05017A3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Foody/Pods-Foody-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A18E5613F9B7EB33AE0CA684 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Foody-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4FF0400BE4E6914BF23E1C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Foody/Pods-Foody-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Foody/Pods-Foody-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DFADEA31FA7B89800906976 /* Sources */ = {
@@ -343,6 +424,7 @@
 		};
 		7DFADEBD1FA7B89800906976 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA6EBAACE10806A3DE0074FA /* Pods-Foody.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4SL936GBZY;
@@ -356,6 +438,7 @@
 		};
 		7DFADEBE1FA7B89800906976 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F89AC805101F68E1B0E97DC /* Pods-Foody.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4SL936GBZY;
