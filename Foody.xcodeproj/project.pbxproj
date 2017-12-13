@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D284FF01FD0CC7A00EA843F /* WelcomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */; };
-		7D284FF21FD0CDAC00EA843F /* test2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7D284FF11FD0CDAC00EA843F /* test2.mov */; };
 		7D7E2BC91FD4CD8300C9F4A8 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */; };
 		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
 		7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */; };
 		7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */; };
 		7D9C5B4B1FAF8D2F00A9EFC6 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */; };
+		7DA592C31FE195FC0058B2AB /* foody_background.mov in Resources */ = {isa = PBXBuildFile; fileRef = 7DA592C21FE195FB0058B2AB /* foody_background.mov */; };
 		7DF879601FE095A000BE2D97 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF8795F1FE095A000BE2D97 /* RegisterVC.swift */; };
 		7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEAA1FA7B89800906976 /* AppDelegate.swift */; };
 		7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEAE1FA7B89800906976 /* Main.storyboard */; };
@@ -35,12 +35,12 @@
 
 /* Begin PBXFileReference section */
 		7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageVC.swift; sourceTree = "<group>"; };
-		7D284FF11FD0CDAC00EA843F /* test2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test2.mov; sourceTree = "<group>"; };
 		7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
 		7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		7DA592C21FE195FB0058B2AB /* foody_background.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = foody_background.mov; sourceTree = "<group>"; };
 		7DF8795F1FE095A000BE2D97 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		7DFADEA71FA7B89800906976 /* Foody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFADEAA1FA7B89800906976 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */,
 				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
 				7DFADEA81FA7B89800906976 /* Products */,
-				7D284FF11FD0CDAC00EA843F /* test2.mov */,
+				7DA592C21FE195FB0058B2AB /* foody_background.mov */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,8 +193,8 @@
 				7DFADEB81FA7B89800906976 /* LaunchScreen.storyboard in Resources */,
 				7DFADEE21FA9331900906976 /* Yellowtail-Regular.otf in Resources */,
 				7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */,
+				7DA592C31FE195FC0058B2AB /* foody_background.mov in Resources */,
 				7D9C5B491FAF5F3C00A9EFC6 /* Assets.xcassets in Resources */,
-				7D284FF21FD0CDAC00EA843F /* test2.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,10 +35,10 @@ class WelcomePageVC: UIViewController {
         
         // create login button
         let loginButton = UIButton(frame: CGRect(x: width / 2 - 160, y: height - 160, width: 320, height: 60))
-        loginButton.backgroundColor = .clear
+        loginButton.backgroundColor = UIColor(red: 76/255, green: 142/255, blue: 251/255, alpha: 1.0)
         loginButton.layer.cornerRadius = 30
         loginButton.layer.borderWidth = 2
-        loginButton.layer.borderColor = UIColor.white.cgColor
+        loginButton.layer.borderColor = UIColor.white.cgColor //blue
         loginButton.setTitle("LOGIN", for: .normal)
         loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: 15)
         loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
@@ -67,8 +67,9 @@ class WelcomePageVC: UIViewController {
  */
     
     private func playVideo() {
-        guard let path = Bundle.main.path(forResource: "test2", ofType:"mov") else {  // m4v
-            debugPrint("video.m4v not found")
+        //guard let path = Bundle.main.path(forResource: "test2", ofType:"mov") else {  // m4v
+        guard let path = Bundle.main.path(forResource: "foody_background", ofType:"mov") else {  // m4v
+            debugPrint("foody_background.mov not found")
             return
         }
         let player = AVPlayer(url: URL(fileURLWithPath: path))
@@ -77,7 +78,10 @@ class WelcomePageVC: UIViewController {
         playerController.showsPlaybackControls = false
         self.addChildViewController(playerController)
         let screenSize:CGRect = UIScreen.main.bounds
-        playerController.view.frame = screenSize
+        let width:CGFloat = screenSize.size.width
+        let height:CGFloat = screenSize.size.height
+        playerController.view.frame = CGRect(x: 0, y: -22, width: width, height: height + 44)
+        //playerController.view.frame = screenSize
         self.view.addSubview(playerController.view)
         player.play()
 
