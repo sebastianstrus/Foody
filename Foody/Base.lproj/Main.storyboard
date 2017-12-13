@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17B1003" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C9e-kt-Pxe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="C9e-kt-Pxe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,6 +14,44 @@
         </array>
     </customFonts>
     <scenes>
+        <!--RegisterVC-->
+        <scene sceneID="36h-3T-igu">
+            <objects>
+                <viewController id="Uy2-zD-Lra" customClass="RegisterVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SEn-vR-vN1"/>
+                        <viewControllerLayoutGuide type="bottom" id="BxW-21-Jnv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cs4-7b-T4e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="hP9-Pk-m3G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5k-ZO-e8v">
+                                <rect key="frame" x="16" y="20" width="74" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="Uy2-zD-Lra" eventType="touchUpInside" id="BH9-PV-lzk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <segue destination="C9e-kt-Pxe" kind="show" identifier="registerToWelcome" id="0bD-rC-pQR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIB-H3-70r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2551.1999999999998" y="621.13943028485767"/>
+        </scene>
         <!--Add meal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -216,12 +254,12 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1346.4000000000001" y="873.91304347826099"/>
+            <point key="canvasLocation" x="-1007.2" y="873.91304347826099"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome PageVC-->
         <scene sceneID="sAj-Vr-4E5">
             <objects>
-                <viewController id="C9e-kt-Pxe" customClass="ViewController" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="C9e-kt-Pxe" customClass="WelcomePageVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vlJ-VK-Nlb"/>
                         <viewControllerLayoutGuide type="bottom" id="5ll-MG-STK"/>
@@ -231,10 +269,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rv1-zF-4HC"/>
+                    <connections>
+                        <segue destination="gCb-Vn-0Gh" kind="show" identifier="toLogin" id="sKS-dZ-ToU"/>
+                        <segue destination="Uy2-zD-Lra" kind="show" identifier="toRegister" id="AFr-dB-4lb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUe-6m-g75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1467" y="129"/>
+            <point key="canvasLocation" x="-3425" y="293"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="Jqo-bE-Kmp">
+            <objects>
+                <viewController id="gCb-Vn-0Gh" customClass="LoginVC" customModule="Foody" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pxc-Jl-duH"/>
+                        <viewControllerLayoutGuide type="bottom" id="nWJ-bH-k6l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DMS-tJ-v8E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="JHY-wg-e0D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeR-Kf-qFa">
+                                <rect key="frame" x="16" y="20" width="74" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="gCb-Vn-0Gh" eventType="touchUpInside" id="a5p-jb-l3t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <segue destination="C9e-kt-Pxe" kind="show" identifier="loginToWelcome" id="pzT-WW-sK8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ClD-ET-pHt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2551.1999999999998" y="-76.011994002998506"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="tKR-Dg-Cjh">
@@ -346,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rtu-cW-02L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-264.80000000000001" y="138.98050974512745"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8z8-nN-Uv3">
@@ -368,7 +449,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gM3-G0-bWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="476" y="138.98050974512745"/>
         </scene>
         <!--List-->
         <scene sceneID="PBX-DB-9p1">
@@ -478,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7e8-eE-qpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="873.91304347826099"/>
+            <point key="canvasLocation" x="476" y="873.91304347826099"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="hb0-0q-u5B">
@@ -604,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j37-dv-a5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1638" y="874"/>
+            <point key="canvasLocation" x="1976.8" y="873.91304347826099"/>
         </scene>
         <!--List-->
         <scene sceneID="AjE-Td-0Mk">
@@ -613,7 +694,7 @@
                     <tabBarItem key="tabBarItem" title="List" image="icon_list" id="pd1-WK-EL3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jab-rl-1Cw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -623,7 +704,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5Z-lq-LOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-604" y="878.41079460269873"/>
+            <point key="canvasLocation" x="-264.80000000000001" y="878.41079460269873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IN2-ca-PHS">
@@ -632,7 +713,7 @@
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="ldP-b0-OgI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kDI-dq-3UY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -642,7 +723,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7c-fS-Lfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="873.91304347826099"/>
+            <point key="canvasLocation" x="1220" y="873.91304347826099"/>
         </scene>
     </scenes>
     <resources>
@@ -653,6 +734,8 @@
         <image name="restaurant" width="636" height="636"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fmY-da-s1G"/>
         <segue reference="Eqc-xD-1Co"/>
+        <segue reference="pzT-WW-sK8"/>
     </inferredMetricsTieBreakers>
 </document>

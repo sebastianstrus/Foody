@@ -10,26 +10,67 @@ import UIKit
 
 class LoginVC: UIViewController {
 
+    var user:[User]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        /*CoreDataHandler.saveObject(username: "Sebek", password: "123456")
+        CoreDataHandler.saveObject(username: "Tomek", password: "123456")
+        CoreDataHandler.saveObject(username: "Bartek", password: "123456")
+        CoreDataHandler.saveObject(username: "Sebek", password: "123456")
+        CoreDataHandler.saveObject(username: "Tomek", password: "123456")
+        CoreDataHandler.saveObject(username: "Bartek", password: "123456")
+        CoreDataHandler.saveObject(username: "Sebek", password: "123456")
+        CoreDataHandler.saveObject(username: "Tomek", password: "123456")
+        CoreDataHandler.saveObject(username: "Bartek", password: "123456")
+        */
+        /*if CoreDataHandler.saveObject(username: "Sebek", password: "123456") {
+            user = CoreDataHandler.fetchObject()
+        
+            print("Before single deleting:")
+            for i in user!{
+                print(i.username!)
+            }
+            
+            if CoreDataHandler.deleteObject(user: user![1]) {
+                user = CoreDataHandler.fetchObject()
+                print("After single deleting:")
+                for i in user!{
+                    print(i.username!)
+                }
+            }
+        
+            if CoreDataHandler.cleanDelete() {
+                user = CoreDataHandler.fetchObject()
+                print("After cleaning:")
+                
+                print(user!.count)
+            }
+        }*/
+        
+        user = CoreDataHandler.fetchObject()
+        for i in user!{
+            print(i.username!)
+        }
+        
+        user = CoreDataHandler.filterData(value: "r")
+        
+        print("After")
+        for i in user!{
+            print(i.username!)
+        }
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func backPressed(_ sender: Any) {
+        performSegue(withIdentifier: "loginToWelcome", sender: nil)}
+
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-}
+
