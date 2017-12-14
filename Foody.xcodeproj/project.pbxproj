@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5FEFC83A6E3249F6B0D14D1B /* Pods_Foody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4051D22CED95467592C14B3C /* Pods_Foody.framework */; };
-		7D284FF01FD0CC7A00EA843F /* WelcomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */; };
+		7D284FF01FD0CC7A00EA843F /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D284FEF1FD0CC7A00EA843F /* WelcomeVC.swift */; };
 		7D7E2BC91FD4CD8300C9F4A8 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */; };
 		7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */; };
 		7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */; };
@@ -20,8 +20,6 @@
 		7DFADEB01FA7B89800906976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEAE1FA7B89800906976 /* Main.storyboard */; };
 		7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEB11FA7B89800906976 /* Foody.xcdatamodeld */; };
 		7DFADEB81FA7B89800906976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */; };
-		7DFADEC71FA8C23600906976 /* Meal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */; };
-		7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */; };
 		7DFADECA1FA8CBDF00906976 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC91FA8CBDF00906976 /* LoginVC.swift */; };
 		7DFADED21FA8CCD400906976 /* AddMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED11FA8CCD400906976 /* AddMealVC.swift */; };
 		7DFADED41FA8CCEA00906976 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED31FA8CCEA00906976 /* MapVC.swift */; };
@@ -37,7 +35,7 @@
 /* Begin PBXFileReference section */
 		4051D22CED95467592C14B3C /* Pods_Foody.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foody.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F89AC805101F68E1B0E97DC /* Pods-Foody.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foody.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foody/Pods-Foody.release.xcconfig"; sourceTree = "<group>"; };
-		7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePageVC.swift; sourceTree = "<group>"; };
+		7D284FEF1FD0CC7A00EA843F /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
 		7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealVC.swift; sourceTree = "<group>"; };
 		7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -51,8 +49,6 @@
 		7DFADEB21FA7B89800906976 /* Foody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Foody.xcdatamodel; sourceTree = "<group>"; };
 		7DFADEB71FA7B89800906976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DFADEB91FA7B89800906976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Meal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7DFADEC91FA8CBDF00906976 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7DFADED11FA8CCD400906976 /* AddMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealVC.swift; sourceTree = "<group>"; };
 		7DFADED31FA8CCEA00906976 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -78,11 +74,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D9222301FE1EB0200C371BA /* ToolBarTabs */ = {
+			isa = PBXGroup;
+			children = (
+				7DFADED11FA8CCD400906976 /* AddMealVC.swift */,
+				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
+				7DFADED31FA8CCEA00906976 /* MapVC.swift */,
+				7DFADED91FA8CD5900906976 /* FavoritesVC.swift */,
+				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
+			);
+			name = ToolBarTabs;
+			sourceTree = "<group>";
+		};
 		7DFADE9E1FA7B89800906976 = {
 			isa = PBXGroup;
 			children = (
-				7DFADEC51FA8C23600906976 /* Meal+CoreDataClass.swift */,
-				7DFADEC61FA8C23600906976 /* Meal+CoreDataProperties.swift */,
 				7DFADEA91FA7B89800906976 /* Foody */,
 				7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */,
 				7DFADEDE1FA92DFB00906976 /* TextFieldEffects.swift */,
@@ -106,19 +112,15 @@
 			children = (
 				7DFADEAA1FA7B89800906976 /* AppDelegate.swift */,
 				7DFADEAE1FA7B89800906976 /* Main.storyboard */,
-				7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */,
 				7DFADEE31FA9332A00906976 /* Fonts */,
 				7DFADEB61FA7B89800906976 /* LaunchScreen.storyboard */,
 				7DFADEB91FA7B89800906976 /* Info.plist */,
-				7D284FEF1FD0CC7A00EA843F /* WelcomePageVC.swift */,
+				7D284FEF1FD0CC7A00EA843F /* WelcomeVC.swift */,
 				7DFADEC91FA8CBDF00906976 /* LoginVC.swift */,
 				7DF8795F1FE095A000BE2D97 /* RegisterVC.swift */,
-				7DFADED11FA8CCD400906976 /* AddMealVC.swift */,
-				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
+				7D9222301FE1EB0200C371BA /* ToolBarTabs */,
 				7D9C5B4A1FAF8D2F00A9EFC6 /* MealCell.swift */,
-				7DFADED31FA8CCEA00906976 /* MapVC.swift */,
-				7DFADED91FA8CD5900906976 /* FavoritesVC.swift */,
-				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
+				7D9C5B461FAF4DE400A9EFC6 /* FavoriteCell.swift */,
 				7D9C5B261FAD604B00A9EFC6 /* MealVC.swift */,
 				7D9C5B481FAF5F3C00A9EFC6 /* Assets.xcassets */,
 				7D7E2BC81FD4CD8300C9F4A8 /* CoreDataHandler.swift */,
@@ -294,15 +296,13 @@
 				7DFADEB31FA7B89800906976 /* Foody.xcdatamodeld in Sources */,
 				7DFADECA1FA8CBDF00906976 /* LoginVC.swift in Sources */,
 				7DFADED21FA8CCD400906976 /* AddMealVC.swift in Sources */,
-				7DFADEC71FA8C23600906976 /* Meal+CoreDataClass.swift in Sources */,
 				7D7E2BC91FD4CD8300C9F4A8 /* CoreDataHandler.swift in Sources */,
 				7DFADED41FA8CCEA00906976 /* MapVC.swift in Sources */,
-				7DFADEC81FA8C23600906976 /* Meal+CoreDataProperties.swift in Sources */,
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
 				7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */,
 				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
 				7DF879601FE095A000BE2D97 /* RegisterVC.swift in Sources */,
-				7D284FF01FD0CC7A00EA843F /* WelcomePageVC.swift in Sources */,
+				7D284FF01FD0CC7A00EA843F /* WelcomeVC.swift in Sources */,
 				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

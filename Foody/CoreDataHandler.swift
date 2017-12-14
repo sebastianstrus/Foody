@@ -11,16 +11,18 @@ import CoreData
 
 class CoreDataHandler: NSObject {
     
-    private class func getContext() -> NSManagedObjectContext {
+    
+    class func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
     }
     
-    class func saveObject(username:String, password:String) -> Bool {
+    class func saveUser(username:String, email:String, password:String) -> Bool {
         let context = getContext()
         let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
         let manageObject = NSManagedObject(entity: entity!, insertInto: context)
         manageObject.setValue(username, forKey: "username")
+        manageObject.setValue(email, forKey: "email")
         manageObject.setValue(password, forKey: "password")
         do {
             try context.save()
@@ -30,7 +32,7 @@ class CoreDataHandler: NSObject {
         }
     }
     
-    class func fetchObject() -> [User]? {
+    class func getUsers() -> [User]? {
         let context = getContext()
         var user:[User]? = nil
         do {
@@ -41,7 +43,7 @@ class CoreDataHandler: NSObject {
         }
     }
     
-    class func deleteObject(user: User) -> Bool {
+    class func deleteUser(user: User) -> Bool {
         let context = getContext()
         context.delete(user)
         do {
@@ -63,18 +65,27 @@ class CoreDataHandler: NSObject {
         }
     }
     
-    class func filterData(value:String) -> [User]? {
+    class func getUser(email:String) -> User? {
         let context = getContext()
         let fetchRequest:NSFetchRequest<User> = User.fetchRequest()
-        var user:[User]? = nil
-        var predicate = NSPredicate(format: "username contains[c] %@", value)
+        var user:User? = nil
+        var users:[User]? = nil
+        let predicate = NSPredicate(format: "email == %@", email)
         fetchRequest.predicate = predicate
         do {
-            user = try context.fetch(fetchRequest)
+            users = try context.fetch(fetchRequest)
+            if let count = users?.count, count > 0 {
+                user = users?[0]
+            }
             return user
         } catch {
             return user
         }
+    }
+    
+    class func getMeals(user:User) -> [Meal]? {
+        var meals:[Meal] = []
+        return meals
     }
 
 }

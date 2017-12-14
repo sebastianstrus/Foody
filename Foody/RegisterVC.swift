@@ -50,8 +50,8 @@ class RegisterVC: UIViewController {
         }
         else
         {
-            let app = UIApplication.shared.delegate as! AppDelegate
-            let context = app.persistentContainer.viewContext
+            let context = CoreDataHandler.getContext()
+            
             
             
             
@@ -75,7 +75,8 @@ class RegisterVC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     // save new user
-                    let new_user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+                    
+                    /*let new_user = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
                     new_user.setValue(usernameTF.text, forKey: "username")
                     new_user.setValue(emailTF.text, forKey: "email")
                     new_user.setValue(passwordTF.text, forKey: "password")
@@ -94,11 +95,13 @@ class RegisterVC: UIViewController {
                     {
                         let Fetcherror = error as NSError
                         print("error", Fetcherror.localizedDescription)
-                    }
-                    // inlogged user
-                    let inloggedUserEmail: Bool = KeychainWrapper.standard.set(emailTF.text!, forKey: "EMAIL")
-                    if inloggedUserEmail {
-                        performSegue(withIdentifier: "registerToHome", sender: nil)
+                    }*/
+                    if CoreDataHandler.saveUser(username: usernameTF.text!, email: emailTF.text!, password: passwordTF.text!) {
+                        let inloggedUserEmail: Bool = KeychainWrapper.standard.set(emailTF.text!, forKey: "EMAIL")
+                        print("User saved")
+                        if inloggedUserEmail {
+                            performSegue(withIdentifier: "registerToHome", sender: nil)
+                        }
                     }
                 }
             }

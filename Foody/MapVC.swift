@@ -9,19 +9,28 @@
 import UIKit
 import MapKit
 import CoreData
+import SwiftKeychainWrapper
 
 class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
-
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var currentUser:User?
+    
     var locationManager: CLLocationManager!
     var allMeals: [Meal]?
+    
+    var allUsers: [User]?
     
     var thumbnailImageByAnnotation = [NSValue : UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        allUsers = CoreDataHandler.getUsers()
+        for user in allUsers! {
+            print("User: \(String(describing: user.username!)) \(String(describing: user.email!)) \(String(describing: user.password!))")
+        }
         
         getMeals()
         configureLocationMenager()
@@ -109,9 +118,14 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
+        }
         getMeals()
         mapView.removeAnnotations(mapView.annotations)
         addAllMealsToMap()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     // read more about map

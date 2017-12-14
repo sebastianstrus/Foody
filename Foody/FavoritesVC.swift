@@ -8,10 +8,13 @@
 
 import UIKit
 import CoreData
+import SwiftKeychainWrapper
 
 class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var currentUser:User?
     
     var allMeals: [Meal]?
     
@@ -73,6 +76,10 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
+        }
         getMeals()
         collectionView.reloadData()
     }

@@ -8,9 +8,11 @@
 
 import UIKit
 import CoreData
+import SwiftKeychainWrapper
 
 class ListTVC: UITableViewController {
-
+    
+    var currentUser:User?
     
     var allMeals: [Meal]?
     
@@ -245,9 +247,18 @@ class ListTVC: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        
         getMeals()
         tableView.reloadData()
     }
+
+    
 
     // retrive from CoreData
     func getMeals() {

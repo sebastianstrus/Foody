@@ -5,7 +5,7 @@ import AVKit
 import AVFoundation
 import SwiftKeychainWrapper
 
-class WelcomePageVC: UIViewController {
+class WelcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class WelcomePageVC: UIViewController {
         let height:CGFloat = bounds.size.height
         
         // add title
-        let titleLabel = UILabel(frame: CGRect(x: width / 2 - 150, y: 180, width: 300, height: 50))
+        let titleLabel = UILabel(frame: CGRect(x: width / 2 - 150, y: 180, width: 300, height: 56))
         titleLabel.textAlignment = NSTextAlignment.center
         titleLabel.textColor = .white
         titleLabel.font = UIFont.systemFont(ofSize: 70, weight: 20)
@@ -99,6 +99,8 @@ class WelcomePageVC: UIViewController {
         
         if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
             print("Saved email is: " + inloggedUserEmail)
+            performSegue(withIdentifier: "welcomeToHome", sender: nil)
+            
         } else {
             print("KeychainWrapper is empty.")
             //performSegue(withIdentifier: "logout", sender: nil)

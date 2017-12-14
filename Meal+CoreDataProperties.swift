@@ -1,9 +1,9 @@
 //
 //  Meal+CoreDataProperties.swift
-//  Foody
+//  
 //
-//  Created by Sebastian Strus on 2017-11-05.
-//  Copyright © 2017 Sebastian Strus. All rights reserved.
+//  Created by Sebastian Strus on 2017-12-13.
+//
 //
 
 import Foundation
@@ -18,12 +18,12 @@ extension Meal {
 
     @NSManaged public var date: NSDate?
     @NSManaged public var image: NSData?
-    @NSManaged public var placeLatitude: Double
-    @NSManaged public var placeLongitude: Double
+    @NSManaged public var isFavorite: Bool
     @NSManaged public var mealDescription: String?
     @NSManaged public var name: String?
+    @NSManaged public var placeLatitude: Double
+    @NSManaged public var placeLongitude: Double
     @NSManaged public var price: String?
-    @NSManaged public var isFavorite: Bool
     @NSManaged public var rating: Int32
 
 }

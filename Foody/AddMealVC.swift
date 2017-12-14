@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MapKit
+import SwiftKeychainWrapper
 
 class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -28,6 +29,8 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     @IBOutlet weak var selectedDateLabel: UILabel!
     @IBOutlet weak var priceTF: UITextField!
     
+    var currentUser:User?
+    
     var ratings: [Int32]?
     var currentRating: Int32?
     
@@ -42,8 +45,10 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
@@ -271,5 +276,14 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentRating = ratings?[row]
         print(currentRating!)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
     }
 }
