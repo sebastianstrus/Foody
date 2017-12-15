@@ -4,11 +4,22 @@ import UIKit
 import AVKit
 import AVFoundation
 import SwiftKeychainWrapper
+import CoreData
 
 class WelcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //clearData
+        /*func1()
+        func2()
+        let removeSuccessful: Bool = KeychainWrapper.standard.removeObject(forKey: "EMAIL")
+        print("removeSuccessful: \(removeSuccessful)")*/
+        
+        
+        
 
         // play video in the background
         playVideo()
@@ -58,6 +69,8 @@ class WelcomeVC: UIViewController {
         self.view.addSubview(registerButton)
     }
     
+    
+    
     @objc func loginPressed() {
         performSegue(withIdentifier: "toLogin", sender: nil)
     }
@@ -106,25 +119,55 @@ class WelcomeVC: UIViewController {
             //performSegue(withIdentifier: "logout", sender: nil)
         }
     }
-
-    
-    
-    
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//clear data
 /*
- 
-
-let url = URL(string: "https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-let item = AVPlayerItem(url: url!)
-self.player = AVPlayer(playerItem: item)
-self.avplayerController = AVPlayerViewController()
-self.avplayerController.player = self.player
-self.avplayerController.view.frame = videoPreviewLayer.frame
-self.avplayerController.showsPlaybackControls = true
-self.avplayerController.requiresLinearPlayback = true
-
-self.addChildViewController(self.avplayerController)
-self.view.addSubview(self.avplayerController.view)
-
-self.avpController.player?.play()*/
+func func1() {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedContext = appDelegate.persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+    fetchRequest.returnsObjectsAsFaults = false
+    do {
+        let results = try managedContext.fetch(fetchRequest)
+        for managedObject in results
+        {
+            let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+            managedContext.delete(managedObjectData)
+            try managedContext.save()
+        }
+    } catch let error as NSError {
+        print("Detele all data in User error : \(error) \(error.userInfo)")
+    }
+}
+func func2() {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedContext = appDelegate.persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
+    fetchRequest.returnsObjectsAsFaults = false
+    do {
+        let results = try managedContext.fetch(fetchRequest)
+        for managedObject in results
+        {
+            let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+            managedContext.delete(managedObjectData)
+            try managedContext.save()
+        }
+    } catch let error as NSError {
+        print("Detele all data in Meal error : \(error) \(error.userInfo)")
+    }
+}*/

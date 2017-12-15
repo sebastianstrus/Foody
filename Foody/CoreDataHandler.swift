@@ -11,7 +11,6 @@ import CoreData
 
 class CoreDataHandler: NSObject {
     
-    
     class func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
@@ -24,6 +23,8 @@ class CoreDataHandler: NSObject {
         manageObject.setValue(username, forKey: "username")
         manageObject.setValue(email, forKey: "email")
         manageObject.setValue(password, forKey: "password")
+        let image = UIImagePNGRepresentation(#imageLiteral(resourceName: "image_user"))! as NSData?
+        manageObject.setValue(image, forKey: "userImage")
         do {
             try context.save()
             return true
@@ -82,12 +83,6 @@ class CoreDataHandler: NSObject {
             return user
         }
     }
-    
-    class func getMeals(user:User) -> [Meal]? {
-        var meals:[Meal] = []
-        return meals
-    }
-
 }
 
 

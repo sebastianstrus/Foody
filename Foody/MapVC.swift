@@ -15,29 +15,63 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    var currentUser:User?
-    
     var locationManager: CLLocationManager!
-    var allMeals: [Meal]?
     
-    var allUsers: [User]?
+    var currentUser:User?
+    var allMeals: [Meal]?
     
     var thumbnailImageByAnnotation = [NSValue : UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getMealsFromCoreData()
         
-        allUsers = CoreDataHandler.getUsers()
-        for user in allUsers! {
-            print("User: \(String(describing: user.username!)) \(String(describing: user.email!)) \(String(describing: user.password!))")
-        }
-        
-        getMeals()
-        configureLocationMenager()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.distanceFilter = 1000
+        locationManager.desiredAccuracy = 1000
+        locationManager.startUpdatingLocation()
+        locationManager.requestWhenInUseAuthorization()
         mapView.delegate = self
-        addAllMealsToMap()
         
+        for meal in allMeals! as [Meal] {
+            let coordinate = CLLocationCoordinate2D(latitude: meal.placeLatitude, longitude: meal.placeLongitude)
+            let  annotation = MKPointAnnotation()
+            var myImage = UIImage(data: meal.image as! Data)!
+            
+            //scale image
+            myImage = scaleImage(image: myImage, maximumWidth: 50)
+            
+            thumbnailImageByAnnotation[NSValue(nonretainedObject: annotation)] = myImage
+            annotation.title = meal.name
+            mapView(self.mapView, viewFor: annotation)?.annotation = annotation
+            annotation.coordinate = coordinate
+            mapView.addAnnotation(annotation)
+        }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getMealsFromCoreData()
+        print("Number of meals after apear: \(allMeals?.count)")
+    }
+    
+    /*override func viewDidAppear(_ animated: Bool) {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
+        }
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //getMeals()
+        var tempMeals: [Meal] = []
+        for meal in (currentUser?.meals)! as! NSSet {
+            tempMeals.append(meal as! Meal)
+        }
+        allMeals = tempMeals;
+        //tableView.reloadData()
+        print("Number of meals after apear: \(allMeals?.count)")
+    }*/
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -48,18 +82,22 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     // retrive from CoreData
-    func getMeals() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
-        do {
-            let meals = try context.fetch(request) as! [Meal]
-            allMeals = meals
+    func getMealsFromCoreData() {
+        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
+            print("Saved email is: " + inloggedUserEmail)
+            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
         }
-        catch let error {
-            print("\(error)")
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        //getMeals()
+        var tempMeals: [Meal] = []
+        for meal in (currentUser?.meals)! as! NSSet {
+            tempMeals.append(meal as! Meal)
         }
+        allMeals = tempMeals;
+        print("Number of meals after retriving: \(allMeals?.count)")
     }
+    
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseID = "myAnnotationView"
@@ -93,42 +131,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         return UIImage(cgImage: cgImage, scale: image.size.width / maximumWidth, orientation: image.imageOrientation)
     }
     
-    func configureLocationMenager() {
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.distanceFilter = 1000
-        locationManager.desiredAccuracy = 1000
-        locationManager.startUpdatingLocation()
-        locationManager.requestWhenInUseAuthorization()
-    }
-    
-    func addAllMealsToMap() {
-        for meal in allMeals! as [Meal] {
-            let coordinate = CLLocationCoordinate2D(latitude: meal.placeLatitude, longitude: meal.placeLongitude)
-            let  annotation = MKPointAnnotation()
-            var myImage = UIImage(data: meal.image as! Data)!
-            //scale image
-            myImage = scaleImage(image: myImage, maximumWidth: 50)
-            thumbnailImageByAnnotation[NSValue(nonretainedObject: annotation)] = myImage
-            annotation.title = meal.name
-            mapView(self.mapView, viewFor: annotation)?.annotation = annotation
-            annotation.coordinate = coordinate
-            mapView.addAnnotation(annotation)// Replace " as!" with "! as"
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
-            print("Saved email is: " + inloggedUserEmail)
-            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
-        }
-        getMeals()
-        mapView.removeAnnotations(mapView.annotations)
-        addAllMealsToMap()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
-    // read more about map
+    // read more
     // https://github.com/codepath/ios_guides/wiki/Using-MapKit
 }
-

@@ -17,11 +17,23 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var passwordTF: HoshiTextField!
     @IBOutlet weak var passwordRepeatTF: HoshiTextField!
     
+    @IBOutlet weak var imageView: UIImageView! //remove
+    var meal1:Meal?
+    //addToMeals(_ value: Meal)
+    
     var result = NSArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // hide keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     @IBAction func backPressed(_ sender: Any) {
@@ -33,9 +45,7 @@ class RegisterVC: UIViewController {
         {
             let alert = UIAlertController(title: "Information", message: "Please enter all details!", preferredStyle: .alert)
             let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             alert.addAction(ok)
-            alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
         }
         else if (passwordTF.text != passwordRepeatTF.text)
@@ -43,9 +53,7 @@ class RegisterVC: UIViewController {
             let alert = UIAlertController(title: "Information", message: "Password does not match", preferredStyle: .alert
             )
             let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             alert.addAction(ok)
-            alert.addAction(cancel)
             self.present(alert, animated: true, completion: nil)
         }
         else
@@ -69,9 +77,7 @@ class RegisterVC: UIViewController {
                     let alert = UIAlertController(title: "Information", message: "Email '\(String(describing: emailTF.text))' is already taken.", preferredStyle: .alert
                     )
                     let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                    let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                     alert.addAction(ok)
-                    alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     // save new user
@@ -96,6 +102,7 @@ class RegisterVC: UIViewController {
                         let Fetcherror = error as NSError
                         print("error", Fetcherror.localizedDescription)
                     }*/
+                    
                     if CoreDataHandler.saveUser(username: usernameTF.text!, email: emailTF.text!, password: passwordTF.text!) {
                         let inloggedUserEmail: Bool = KeychainWrapper.standard.set(emailTF.text!, forKey: "EMAIL")
                         print("User saved")

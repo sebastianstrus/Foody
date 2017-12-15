@@ -16,14 +16,11 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
     
     var currentUser:User?
     
-    var allMeals: [Meal]?
+    var allMeals: [Meal] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getMeals()
-        // Do any additional setup after loading the view.
-        
         let itemSize = UIScreen.main.bounds.width/3 - 3
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(20, 0, 10, 0)
@@ -35,29 +32,16 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
 
     // number of views
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (allMeals?.count)!
+        return (allMeals.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FavoriteCell
-        
-        //let screenSize: CGRect = UIScreen.main.bounds
-        //cell.frame.width = screenSize.width - 10
-            // CGRect(x: 0, y: 0, width: 50, height: screenSize.height * 0.2)
-        
-        cell.favoriteImageView.image = UIImage(data:(allMeals?[indexPath.row].image)! as Data,scale:1.0)
-        
-        
+        cell.favoriteImageView.image = UIImage(data:(allMeals[indexPath.row].image)! as Data,scale:1.0)
         return cell// Cannot convert value of type 'NSData?' to type 'UIImage' in coercion
     }
-    
-    
-    
-    
-    
-    
-    
+
     func getMeals() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
@@ -69,8 +53,8 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         catch let error {
             print("\(error)")
         }
-        print("All meals (\(allMeals?.count)):")
-        for meal in allMeals! {
+        print("All meals (\(allMeals.count)):")
+        for meal in allMeals {
             print("Meal: \(meal.description)")
         }
     }
@@ -80,7 +64,14 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
             print("Saved email is: " + inloggedUserEmail)
             currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
         }
-        getMeals()
+        //getMeals()
+        var tempMeals: [Meal] = []
+        for meal in (currentUser?.meals)! as! NSSet {
+            if ((meal as! Meal).isFavorite) {
+                tempMeals.append(meal as! Meal)
+            }
+        }
+        allMeals = tempMeals;
         collectionView.reloadData()
     }
 
@@ -89,16 +80,12 @@ class FavoritesVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         self.performSegue(withIdentifier: "showFavoriteMeal", sender: indexPath)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if( segue.identifier == "showFavoriteMeal" ) {
-            
             let VC1 = segue.destination as! MealVC
             if let indexPath = sender as? IndexPath {
-                
-                let meal = allMeals?[indexPath.row]
+                let meal = allMeals[indexPath.row]
                 VC1.meal = meal
             }
         }
     }
-
 }

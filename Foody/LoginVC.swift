@@ -22,6 +22,10 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // hide keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         
         /*CoreDataHandler.saveObject(username: "Sebek", password: "123456")
         CoreDataHandler.saveObject(username: "Tomek", password: "123456")
@@ -69,6 +73,10 @@ class LoginVC: UIViewController {
             print(i.username!)
         }*/
         
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
 

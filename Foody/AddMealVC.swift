@@ -21,13 +21,16 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var ratingPicker: UIPickerView!
-    @IBOutlet weak var datePopup: UIVisualEffectView!
+    @IBOutlet weak var datePopup: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var dateCancelButton: UIButton!
     @IBOutlet weak var dateOkButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var selectedDateLabel: UILabel!
     @IBOutlet weak var priceTF: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var favouriteSwitch: UISwitch!
     
     var currentUser:User?
     
@@ -49,6 +52,11 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        datePopup.layer.shadowColor = UIColor.black.cgColor
+        datePopup.layer.shadowOpacity = 1
+        datePopup.layer.shadowOffset = CGSize.zero
+        datePopup.layer.shadowRadius = 10
+        datePopup.layer.cornerRadius = 10
         
         // hide keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
@@ -79,6 +87,13 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
         ratingPicker.delegate = self
         ratingPicker.dataSource = self
         ratings = [Int32](0...10)
+        
+        saveButton.backgroundColor = .clear
+        saveButton.layer.cornerRadius = 20
+        saveButton.layer.borderWidth = 2
+        saveButton.layer.borderColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0).cgColor
+        saveButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: 1)
+        
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
@@ -149,50 +164,49 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        
         if (!(titleTF.text?.isEmpty)!) {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            var alreadyExists = false
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Meal")
+            let context = CoreDataHandler.getContext()
+            
+            let userDescription = NSEntityDescription.entity(forEntityName: "User", in: context)!
+            let mealDescription = NSEntityDescription.entity(forEntityName: "Meal", in: context)!
+            
+            //let newUser = NSManagedObject(entity: userDescription, insertInto: context) as! User
+            let newMeal = NSManagedObject(entity: mealDescription, insertInto: context) as! Meal
+            
+            newMeal.name = titleTF.text
+            newMeal.image = UIImagePNGRepresentation(imageView.image!)! as NSData?
+            newMeal.date = settedDate as! NSDate
+            newMeal.mealDescription = descriptionTV.text
+            newMeal.price = priceTF.text
+            newMeal.rating = currentRating!
+            newMeal.isFavorite = favouriteSwitch.isOn
+            if currentLatitude != 0.0 {
+                newMeal.placeLongitude = currentLongitude
+                newMeal.placeLatitude = currentLatitude
+            }
+            
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            
             do {
-                let meals = try context.fetch(request) as! [Meal]
-                for meal in meals {
-                    //print("In CoreData: \(String(describing: meal.name)) Current: \(String(describing: titleTF.text))")
-                    if meal.name == titleTF.text {
-                        alreadyExists = true
+                let users = try context.fetch(request) as! [User]
+                for user in users {
+                    if user.email == currentUser?.email {
+                        user.addToMeals(newMeal)
+                        titleTF.text = ""
                     }
                 }
+            } catch let error {
+                NSLog("\(error)")
+            }
+            
+            do {
+                try context.save()
+                alert(info: "Meal is successfully saved!")
             }
             catch let error {
-                print("\(error)")
-            }
-            if !alreadyExists {
-                //save Meal: name, image, date, price, mealDescription, rating, latitude, longitude
-                let mealDescription = NSEntityDescription.entity(forEntityName: "Meal", in: context)!
-                let newMeal = NSManagedObject(entity: mealDescription, insertInto: context) as! Meal
-                newMeal.name = titleTF.text
-                newMeal.image = UIImagePNGRepresentation(imageView.image!)! as NSData?
-                newMeal.date = settedDate as! NSDate
-                newMeal.mealDescription = descriptionTV.text
-                newMeal.price = priceTF.text
-                newMeal.rating = currentRating!
-                newMeal.isFavorite = true
-                print(currentRating!)
-                if currentLatitude != 0.0 {
-                    newMeal.placeLongitude = currentLongitude
-                    newMeal.placeLatitude = currentLatitude
-                }
-                do {
-                    try context.save()
-                }
-                catch let error {
-                    print(error)
-                }
-                //performSegue(withIdentifier: "ToMainMenu", sender: nil)
-                alert(info: "Successfully saved!")
-            } else {
-                let title = titleTF.text
-                alertAlreadyExists(title: title!)
+                print(error)
             }
         }
         else {

@@ -2,7 +2,7 @@
 //  Meal+CoreDataProperties.swift
 //  
 //
-//  Created by Sebastian Strus on 2017-12-13.
+//  Created by Sebastian Strus on 2017-12-15.
 //
 //
 
@@ -25,5 +25,6 @@ extension Meal {
     @NSManaged public var placeLongitude: Double
     @NSManaged public var price: String?
     @NSManaged public var rating: Int32
+    @NSManaged public var owner: User?
 
 }

@@ -23,7 +23,7 @@
 		7DFADECA1FA8CBDF00906976 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEC91FA8CBDF00906976 /* LoginVC.swift */; };
 		7DFADED21FA8CCD400906976 /* AddMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED11FA8CCD400906976 /* AddMealVC.swift */; };
 		7DFADED41FA8CCEA00906976 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED31FA8CCEA00906976 /* MapVC.swift */; };
-		7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED51FA8CD0300906976 /* SettingsVC.swift */; };
+		7DFADED61FA8CD0300906976 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED51FA8CD0300906976 /* UserVC.swift */; };
 		7DFADEDA1FA8CD5900906976 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADED91FA8CD5900906976 /* FavoritesVC.swift */; };
 		7DFADEDC1FA8D50800906976 /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEDB1FA8D50800906976 /* ListTVC.swift */; };
 		7DFADEDF1FA92DFB00906976 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */; };
@@ -52,7 +52,7 @@
 		7DFADEC91FA8CBDF00906976 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		7DFADED11FA8CCD400906976 /* AddMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealVC.swift; sourceTree = "<group>"; };
 		7DFADED31FA8CCEA00906976 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		7DFADED51FA8CD0300906976 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		7DFADED51FA8CD0300906976 /* UserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		7DFADED91FA8CD5900906976 /* FavoritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		7DFADEDB1FA8D50800906976 /* ListTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
 		7DFADEDD1FA92DFB00906976 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				7DFADEDB1FA8D50800906976 /* ListTVC.swift */,
 				7DFADED31FA8CCEA00906976 /* MapVC.swift */,
 				7DFADED91FA8CD5900906976 /* FavoritesVC.swift */,
-				7DFADED51FA8CD0300906976 /* SettingsVC.swift */,
+				7DFADED51FA8CD0300906976 /* UserVC.swift */,
 			);
 			name = ToolBarTabs;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				7DFADED41FA8CCEA00906976 /* MapVC.swift in Sources */,
 				7DFADEAB1FA7B89800906976 /* AppDelegate.swift in Sources */,
 				7D9C5B471FAF4DE400A9EFC6 /* FavoriteCell.swift in Sources */,
-				7DFADED61FA8CD0300906976 /* SettingsVC.swift in Sources */,
+				7DFADED61FA8CD0300906976 /* UserVC.swift in Sources */,
 				7DF879601FE095A000BE2D97 /* RegisterVC.swift in Sources */,
 				7D284FF01FD0CC7A00EA843F /* WelcomeVC.swift in Sources */,
 				7D9C5B271FAD604B00A9EFC6 /* MealVC.swift in Sources */,
