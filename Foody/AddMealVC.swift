@@ -297,6 +297,7 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
             print("Saved email is: " + inloggedUserEmail)
             currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
         }
+    
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
     }
