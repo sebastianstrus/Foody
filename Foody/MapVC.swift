@@ -34,25 +34,16 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         locationManager.requestWhenInUseAuthorization()
         mapView.delegate = self
         
-        for meal in allMeals! as [Meal] {
-            let coordinate = CLLocationCoordinate2D(latitude: meal.placeLatitude, longitude: meal.placeLongitude)
-            let  annotation = MKPointAnnotation()
-            var myImage = UIImage(data: meal.image as! Data)!
-            
-            //scale image
-            myImage = scaleImage(image: myImage, maximumWidth: 50)
-            
-            thumbnailImageByAnnotation[NSValue(nonretainedObject: annotation)] = myImage
-            annotation.title = meal.name
-            mapView(self.mapView, viewFor: annotation)?.annotation = annotation
-            annotation.coordinate = coordinate
-            mapView.addAnnotation(annotation)
-        }
+        addMealsToMap()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         getMealsFromCoreData()
         print("Number of meals after apear: \(allMeals?.count)")
+        mapView.removeAnnotations(mapView.annotations)
+        print("Number of meals after delete: \(allMeals?.count)")
+        addMealsToMap()
+        print("Number of meals after adding: \(allMeals?.count)")
     }
     
     /*override func viewDidAppear(_ animated: Bool) {
@@ -130,6 +121,25 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         let cgImage: CGImage = image.cgImage!.cropping(to: rect)!
         return UIImage(cgImage: cgImage, scale: image.size.width / maximumWidth, orientation: image.imageOrientation)
     }
+    
+    func addMealsToMap() {
+        for meal in allMeals! as [Meal] {
+            let coordinate = CLLocationCoordinate2D(latitude: meal.placeLatitude, longitude: meal.placeLongitude)
+            let  annotation = MKPointAnnotation()
+            var myImage = UIImage(data: meal.image as! Data)!
+            
+            //scale image
+            myImage = scaleImage(image: myImage, maximumWidth: 50)
+            
+            thumbnailImageByAnnotation[NSValue(nonretainedObject: annotation)] = myImage
+            annotation.title = meal.name
+            mapView(self.mapView, viewFor: annotation)?.annotation = annotation
+            annotation.coordinate = coordinate
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
+
     
     // read more
     // https://github.com/codepath/ios_guides/wiki/Using-MapKit
