@@ -62,9 +62,14 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddMealVC.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        //set date picker mode
+        datePicker.datePickerMode = UIDatePickerMode.date
+
+
         //set current Date as default
         let date = Date()
         settedDate = date
+        dateInPicker = date
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         selectedDateLabel.text = formatter.string(from: date)
@@ -155,12 +160,6 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         print("print \(sender.date)")
         dateInPicker = sender.date
-        
-        /*let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, YYYY"
-        let somedateString = dateFormatter.string(from: sender.date)
-        
-        print(somedateString)*/
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -261,8 +260,12 @@ class AddMealVC: UIViewController, MKMapViewDelegate, UIImagePickerControllerDel
         settedDate = dateInPicker
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
+        print("dateInPicker: \(String(describing: dateInPicker))")
+        print("dateInPicker: \(String(describing: dateInPicker))")
+        print("dateInPicker: \(String(describing: dateInPicker))")
         let somedateString = dateFormatter.string(from: dateInPicker!)
         selectedDateLabel.text = somedateString
+        
         // fade out
         UIView.animate(withDuration: 0.5, animations: {
             self.datePopup.alpha = 0
