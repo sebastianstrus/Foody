@@ -39,30 +39,10 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         getMealsFromCoreData()
-        print("Number of meals after apear: \(allMeals?.count)")
         mapView.removeAnnotations(mapView.annotations)
-        print("Number of meals after delete: \(allMeals?.count)")
         addMealsToMap()
-        print("Number of meals after adding: \(allMeals?.count)")
     }
-    
-    /*override func viewDidAppear(_ animated: Bool) {
-        if let inloggedUserEmail: String = KeychainWrapper.standard.string(forKey: "EMAIL") {
-            print("Saved email is: " + inloggedUserEmail)
-            currentUser = CoreDataHandler.getUser(email: inloggedUserEmail)
-        }
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        //getMeals()
-        var tempMeals: [Meal] = []
-        for meal in (currentUser?.meals)! as! NSSet {
-            tempMeals.append(meal as! Meal)
-        }
-        allMeals = tempMeals;
-        //tableView.reloadData()
-        print("Number of meals after apear: \(allMeals?.count)")
-    }*/
-    
-    
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
@@ -87,8 +67,6 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         allMeals = tempMeals;
         print("Number of meals after retriving: \(allMeals?.count)")
     }
-    
-    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseID = "myAnnotationView"
@@ -138,9 +116,4 @@ class MapVC: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
             mapView.addAnnotation(annotation)
         }
     }
-    
-
-    
-    // read more
-    // https://github.com/codepath/ios_guides/wiki/Using-MapKit
 }
